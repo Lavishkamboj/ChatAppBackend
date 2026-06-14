@@ -145,8 +145,8 @@ app.post('/logout',(req,res)=>{
     console.log('ok lets delete you token')
      res.clearCookie('token', {
   httpOnly: true,
-  secure: false,
-  sameSite: 'lax',
+  secure: true,
+  sameSite: 'none',
 });
 return res.json({ message: 'Logged out successfully' });
 })
