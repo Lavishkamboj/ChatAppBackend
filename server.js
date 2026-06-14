@@ -13,7 +13,7 @@ const server=http.createServer(app);
 require('dotenv').config()
 const io= new Server(server,{
     cors:{
-        origin:"https://chat-app-frontend-theta-six.vercel.app",
+        origin:"https://chat-app-frontend-ten-neon.vercel.app",
         method:["get","post"],
         credentials:true
     }
@@ -36,7 +36,7 @@ const jwt=require('jsonwebtoken')
 const cookieParser = require('cookie-parser')
 
 app.use(cors({ // your React app
- origin: ['http://localhost:5173', 'https://chat-app-frontend-theta-six.vercel.app'],
+ origin: ['http://localhost:5173', 'https://chat-app-frontend-ten-neon.vercel.app'],
   credentials: true,         
 }));
 
