@@ -147,6 +147,8 @@ app.post('/logout',(req,res)=>{
   httpOnly: true,
   secure: true,
   sameSite: 'none',
+   path: '/',
+  maxAge: 86400000
 });
 return res.json({ message: 'Logged out successfully' });
 })
