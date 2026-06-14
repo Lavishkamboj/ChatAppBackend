@@ -240,7 +240,7 @@ res.json({
 //we want to give usernmae to our /conversation route but thats socket onnection not app.get/post, so to get user we cant do req.cookie thats why we first make app.get req at backened and it decodes the username and send it back and then frontend save it and pass it in auth ,so that now any socket request can access it. 
 app.get('/me', (req, res) => {
   const token = req.cookies.token
-  if (!token) return res.status(401).send({ message: 'Not logged in' })
+  if (!token) return res.status(401).json({ message: 'Not logged in' })
   
   const decoded = jwt.verify(token, process.env.JWT_SECRET)
   
