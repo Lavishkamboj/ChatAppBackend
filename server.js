@@ -78,8 +78,8 @@ console.log("token-"+token)
 
 res.cookie('token', token, {
   httpOnly: true,         // allow JS to access (optional)
-  secure: false,           // must be true if you're on HTTPS
-  sameSite: 'lax',         // controls cross-origin cookie behavior
+  secure: true,           // must be true if you're on HTTPS
+  sameSite: 'none',         // controls cross-origin cookie behavior
   path: '/',               // cookie available to all paths
   maxAge: 86400000         // 1 day
 });
