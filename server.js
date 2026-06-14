@@ -13,7 +13,7 @@ const server=http.createServer(app);
 require('dotenv').config()
 const io= new Server(server,{
     cors:{
-        origin:"http://localhost:5173",
+        origin:"https://chat-app-frontend-theta-six.vercel.app/",
         method:["get","post"],
         credentials:true
     }
@@ -36,7 +36,7 @@ const jwt=require('jsonwebtoken')
 const cookieParser = require('cookie-parser')
 
 app.use(cors({ // your React app
- origin: ['http://localhost:5173', 'https://61qv2781-5173.inc1.devtunnels.ms'],
+ origin: ['http://localhost:5173', 'https://chat-app-frontend-theta-six.vercel.app/'],
   credentials: true,         
 }));
 
@@ -309,8 +309,8 @@ io.on("connection",async (socket)=>{
 //       message: msg_content
 //     });
 socket.to(socket.roomName).emit("receive_message", {
-  senderId: username,   // ✅ matches what frontend checks for alignment
-  content: msg_content, // ✅ matches what JSX renders
+  senderId: username,   // matches what frontend checks for alignment
+  content: msg_content, //  matches what JSX renders
   conversationId: conv_id,
   
   
